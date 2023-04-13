@@ -42,9 +42,9 @@ class Escore:
         self.cutoff = cutoff
         # set kernel to 0.25(def)
         self.kernel.set_bandwidth(bandwidth)
-        warn =  "# KDE computed. Bandwidth= %5.2f " % (self.kernel.factor)
-        warn += " using %d base-pairs" % mats.shape[1]
-        sys.stderr.write(warn)
+        #warn =  "# KDE computed. Bandwidth= %5.2f " % (self.kernel.factor)
+        #warn += " using %d base-pairs" % mats.shape[1]
+        #sys.stderr.write(warn)
         
     def score(self,sample,topology=None):
         
@@ -53,8 +53,8 @@ class Escore:
             traj = md.load(sample)
         else:
             traj = md.load(sample,top=topology)
-        warn = "# Loaded sample %s \n" % sample
-        sys.stderr.write(warn)
+        #warn = "# Loaded sample %s \n" % sample
+        #sys.stderr.write(warn)
         
         nn = nucleic.Nucleic(traj.topology,modified=False)
         scores = []

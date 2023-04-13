@@ -50,15 +50,15 @@ def ermsd(reference,target,cutoff=2.4,topology=None,residues_ref=None,residues_t
     """
 
     ref = md.load(reference)
-    warn =  "# Loaded reference %s \n" % reference
+    #warn =  "# Loaded reference %s \n" % reference
         
     if(topology==None):
         traj = md.load(target)
     else:
         traj = md.load(target,top=topology)
         
-    warn += "# Loaded target %s \n" % target
-    sys.stderr.write(warn)
+    #warn += "# Loaded target %s \n" % target
+    #sys.stderr.write(warn)
 
     return ermsd_traj(ref,traj,cutoff=cutoff,residues_ref=residues_ref,residues_target=residues_target)
 
@@ -269,7 +269,7 @@ def rmsd_traj(reference,traj,out=None,heavy_atom=False):
                     if(at.name in name2):
                         idx_ref.append(at.index)
                         idx_target.append(((res2.atom(at.name)).index))
-    print("# found ",len(idx_ref), "atoms in common")
+    #print("# found ",len(idx_ref), "atoms in common")
     
     if(len(idx_ref)<3):
         warn =  "# Only  %d atoms in common. abort.\n" % len(idx_ref)
@@ -1269,7 +1269,7 @@ def parse_dotbr(dotbra):
 def parse_dotbracket(threshold, file, weights):
     import barnaba.sec_str_constants as secon
     import re 
-    print("Parsing file ", file)    
+    #print("Parsing file ", file)    
     with open(file) as f:
         f_dotbracket = f.readlines()
         f.close()
@@ -1350,7 +1350,7 @@ def parse_dotbracket(threshold, file, weights):
 def parse_annotations(threshold, file, weights):
     import barnaba.sec_str_constants as secon
     import re 
-    print("Parsing file ", file)    
+    #print("Parsing file ", file)    
     with open(file) as f:
         annotation = f.readlines()
         f.close()

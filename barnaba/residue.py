@@ -36,8 +36,8 @@ class Residue:
             # make sure that atoms is not duplicated
             # this can happen with multiple occupancy
             if(atoms_data[i][1] in self.atom_types):
-                err = "# Warning: atom %s is already present in residue %s \n" % (atoms_data[i][1],self.res_id)
-                sys.stderr.write(err)
+                #err = "# Warning: atom %s is already present in residue %s \n" % (atoms_data[i][1],self.res_id)
+                #sys.stderr.write(err)
                 continue
                 
             self.atom_numbers.append(int(atoms_data[i][0]))
