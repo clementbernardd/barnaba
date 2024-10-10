@@ -104,7 +104,7 @@ numexpr==2.8.1
 numpy==1.21
 odfpy==1.4.1
 olefile==0.46
-OpenMM==0.1
+OpenMM==8.1.1
 openpyxl==3.0.9
 packaging==23.0
 pandas==1.5.3
